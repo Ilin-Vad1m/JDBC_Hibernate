@@ -13,7 +13,6 @@ public class Main {
         service.saveUser("name4","lastName4",(byte) 47);
         service.getAllUsers();
         service.cleanUsersTable();
-        service.removeUserById(1);
         service.dropUsersTable();
     }
 }
