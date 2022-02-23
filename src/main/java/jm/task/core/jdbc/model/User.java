@@ -1,20 +1,18 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Objects;
 
-@Table
+@Entity
+@Table()
 public class User {
     @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
     private Long id;
-
     @Column
     private String name;
-
     @Column
     private String lastName;
-
     @Column
     private Byte age;
 
@@ -60,7 +58,15 @@ public class User {
         this.age = age;
     }
 
-    public String toString(){
-        return getName() + " " + getLastName() + " " + getAge();
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
+
 }
